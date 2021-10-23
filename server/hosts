@@ -1,0 +1,8 @@
+## (BROWSER) chrome slow when load virtual host.txt
+127.0.0.1 test.win
+127.0.0.1 cdn1.test.win
+127.0.0.1 cdn2.test.win
+##::1 test.win
+127.0.0.1 balancer1.win
+127.0.0.1 balancer2.win
+127.0.0.1 balancer.win

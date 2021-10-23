@@ -1,0 +1,10 @@
+how to setup
+1. edit config.php or download.config
+2. config php
+    max_execution_time = 6000     ; Maximum execution time of each script, in seconds    
+    memory_limit = 2048M      ; Maximum amount of memory a script may consume (8MB)
+3. use
+    cd to dir of this file
+    php download.php
+4. copy content of file bat/rename.bat
+5. paste into command line window

@@ -1,0 +1,47 @@
+Tool - Log 
+A PHP Logger and a replacement is for var_dump, print_r. This log only ouput to file not browser.
+Special systax of this log help to easy of finding and removing them out every web application.
+This log should be used only for development.
+
+[SETUP]
+setup once time for each webserver.
+
+- only active on windows.
+- copy source into C:/project/www/.
+- copy config-sample & rename to config. also move it up directory
+- open php.ini, replace `;auto_prepend_file` to `auto_prepend_file = "C:/project/www/tool/log/index.php"`
+- restart webserver.
+
+[SYNTAX] 
+new {class}([[string $config], mixed $expression [, mixed $... ]]);
+
+List of supported types (classes):
+- lig, log1, log2, ..., log10
+output to file log with name lig.log, log1.log, ...
+- logdie, log1die, log2die, ..., log10die
+output to file log with name ligdie.log, log1die.log, ... then die.
+- loge
+no params, enable php error notifications
+- logp, logpdie
+no output to file but show on browser
+- loga, logadie
+no params, no output to file but show on browser
+show debug backtrace to current position.
+- logr, log1r, ..., log10r
+need $config
+output to file but file name will changed at each request.
+see customPrefix config
+- logc, log2c, ..., log10c
+need $config
+output to file but file name will changed for each calling and each request.
+see customPrefix config
+- logt, log1t, log2t, ..., log10t
+overwrite to file log with name logt.log, log1t.log, ...
+- logtdie, log1tdie, log2tdie, ..., log10tdie
+overwrite to file log with name logtdie.log, log1tdie.log, ... then die.
+- logx & logy, log1x & log1y, log2x & log2y, ..., log10x & log10y
+no params
+write period time of running of some codes to x2y/0.log, x2y/1.log, ...
+
+[WARNING]
+Please do not use those tools when you measure time in task 'performance_testing'

@@ -1,0 +1,9 @@
+I. list file
+1. data file (*.csv)
+2. control file (*.ctl)
+3. execute file (*.bat)
+
+II. import
+1. copy files to server orcale
+2. edit paths
+3. run bat (call utility sqldr of oracle)

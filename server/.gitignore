@@ -1,0 +1,11 @@
+temp/log/*.log
+profiler/*.out.*
+php
+mysql
+apache
+data/ib_logfile0
+data/ib_logfile1
+data/*.err
+data/*.pid
+httpd-*/logs/*.shm
+httpd-*/logs/*.log

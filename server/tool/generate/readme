@@ -1,0 +1,10 @@
+1. edit table field info
+    - time step: max - min + 1, unit: month timeStep
+    - number of records at each time step recordPerStep ~ 10^x
+    - count record for notification by logging recordForLog i.e. 1000
+    - config thread, recordPerThread, projectName i.e. *.config
+    - config rateOfNull i.e. 0%
+    - config additionalSeed that used in srand
+2. copy and the edit command from "mysql import/command.txt" ex. php generate.php
+3. run generate.bat
+4. read mysql/oracle readme

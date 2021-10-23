@@ -1,0 +1,9 @@
+I. list file
+1. data file (*.csv)
+2. sql file (*.pgsql)
+
+II. import
+1. join *.pgsql to unique pgsql/all.pgsql
+2. open pgAdmin
+3. set schema 'my_schema_01';
+4. load pgsql/all.pgsql and run

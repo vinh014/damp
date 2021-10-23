@@ -1,0 +1,8 @@
+I. list file
+1. data file (*.csv)
+2. sql file (*.sql)
+
+II. import
+1. join *.sql to unique sql/all.sql
+2. open navicate
+3. load sql/all.sql and run

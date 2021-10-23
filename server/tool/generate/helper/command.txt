@@ -1,0 +1,6 @@
+
+:: i.e for set parameters by command line
+set LTROW=500000
+set QUERY_STRING="thread=1&recordPerThread=%LTROW%&projectName=enavi"
+php generate.php
+::
