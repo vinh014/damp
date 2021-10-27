@@ -52,12 +52,13 @@ INSTALL
     * Install Microsoft Visual C++ 2019 Redistributable Package (VC16) for x64
     * Note: uninstall and reinstall in other order if something is not done
     https://support.microsoft.com/vi-vn/help/2977003/the-latest-supported-visual-c-downloads
-- Make both ports 80, 443 free to use
+- Make both ports 80, 443, 3306 free to use
 	* Check: open Resource Monitor > Network > Listening Ports
     * Quit skype
     * Disable TeamViewer from using port 80
     * Uninstall other softwares (xampp, wamp, appserver, iis, ...)
     * Uninstall old version of DAMP by run command/uninstall.bat
+    * Uninstall current services of Apache, PHP, MySQL
     * Others
 	    ~ Change port for VMware Host Agent service
 	    ~ Change port Windows Work Folders
