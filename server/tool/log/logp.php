@@ -23,6 +23,8 @@ class logp extends lig
         Stack::pushLog(__FILE__, __CLASS__, __FUNCTION__);
         $className = get_class($this);
         $expressions = func_get_args();
+        // add a param in cli mode. The tool auto insert a new line
+        'CLI' == strtoupper(php_sapi_name()) && $expressions[] = '';
         $expressionNames = array();
         foreach ($expressions as $index => $arg) {
             $expressionNames[] = '$expressions[' . $index . ']';
