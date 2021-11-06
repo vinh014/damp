@@ -439,7 +439,12 @@ class lig
             case $noLog == true: # no log no echo no write
                 break;
             case $isEcho == true: # echo
-                echo '<pre>' . $logData . '</pre>';
+                // if it's php cli, append a new line
+                if('CLI' == strtoupper(php_sapi_name())) {
+                    echo $logData . PHP_EOL;
+                } else {
+                    echo '<pre>' . $logData . '</pre>';
+                }
                 break;
             default: # write log file
                 eval($className . '::writeLogs(array(
