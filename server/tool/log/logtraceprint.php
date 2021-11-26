@@ -11,24 +11,18 @@
  *
  * @copyright Copyright (c) 2011-2015 Nguyen Van Vinh (vinhnv@live.com)
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'lig.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logprint.php';
 
 /**
  * not write log data to file but showing
  */
-class logp extends lig
+class logtraceprint extends logprint
 {
     public function __construct()
     {
         Stack::pushLog(__FILE__, __CLASS__, __FUNCTION__);
-        $className = get_class($this);
-        $expressions = func_get_args();
-        $expressionNames = array();
-        foreach ($expressions as $index => $arg) {
-            $expressionNames[] = '$expressions[' . $index . ']';
-        }
-        eval($className . '::onlyEcho(true);');
-        eval('parent::__construct(' . implode(',', $expressionNames) . ');');
+        $e = new Exception();
+        eval('parent::__construct($e->getTraceAsString());');
     }
 }
  

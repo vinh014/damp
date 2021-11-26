@@ -11,20 +11,20 @@
  *
  * @copyright Copyright (c) 2011-2015 Nguyen Van Vinh (vinhnv@live.com)
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logpx.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logp.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logxprint.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logprint.php';
 
 /**
  * measure duration time of executing of part of application
  * new logx, new logy write to duration directory
  */
-class logpy extends logpx
+class logyprint extends logxprint
 {
     public function __construct($name = '')
     {
         $number = (int)preg_replace('/[^0-9]/', '', __CLASS__);
         $duration = round(microtime(true) * 1000) - self::$_data[$name . $number];
         self::$_data[$name . $number] = null;
-        $name ? new logp($name . ': ' . $duration) : new logp($duration);
+        $name ? new logprint($name . ': ' . $duration) : new logprint($duration);
     }
 }

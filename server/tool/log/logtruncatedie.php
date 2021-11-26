@@ -11,9 +11,12 @@
  *
  * @copyright Copyright (c) 2011-2015 Nguyen Van Vinh (vinhnv@live.com)
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logpy.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logtruncate.php';
 
-class logpydie extends logpy
+/**
+ * same as logt but after logging then die
+ */
+class logtruncatedie extends logtruncate
 {
     public function __construct()
     {

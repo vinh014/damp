@@ -11,19 +11,18 @@
  *
  * @copyright Copyright (c) 2011-2015 Nguyen Van Vinh (vinhnv@live.com)
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logp.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logrequest.php';
 
 /**
  * not write log data to file but showing
  */
-class logadie extends logp
+class logtracerequest extends logrequest
 {
     public function __construct()
     {
         Stack::pushLog(__FILE__, __CLASS__, __FUNCTION__);
         $e = new Exception();
         eval('parent::__construct($e->getTraceAsString());');
-        die;
     }
 }
  

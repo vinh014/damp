@@ -12,7 +12,7 @@
  * @copyright Copyright (c) 2011-2015 Nguyen Van Vinh (vinhnv@live.com)
  */
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logx.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logr.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logrequest.php';
 
 /**
  * measure duration time of executing of part of application
@@ -29,7 +29,7 @@ class logy extends logx
         $name = trim($name, '/\\');
         $backup = lig::$___customPrefix;
         lig::$___customPrefix = true;
-        new logr('x2y/' . $number . ($name ? '/' . $name : ''), $duration);
+        new logrequest('x2y/' . $number . ($name ? '/' . $name : ''), $duration);
         lig::$___customPrefix = $backup;
     }
 }

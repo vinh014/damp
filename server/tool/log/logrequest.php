@@ -17,7 +17,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'lig.php';
  * each request each file (in a directory, optional)
  * base on SERVER REQUEST URI and uniqid
  */
-class logr extends lig
+class logrequest extends lig
 {
     /** r not extend */
     static $_first = true;

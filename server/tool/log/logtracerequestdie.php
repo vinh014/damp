@@ -11,12 +11,12 @@
  *
  * @copyright Copyright (c) 2011-2015 Nguyen Van Vinh (vinhnv@live.com)
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logr.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logrequest.php';
 
 /**
  * not write log data to file but showing
  */
-class logardie extends logr
+class logtracerequestdie extends logrequest
 {
     public function __construct()
     {

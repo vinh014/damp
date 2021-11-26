@@ -21,9 +21,9 @@ scanPhpFile(__FILE__);
 $nlog = lig::nlog(); # get value of nlog
 
 $phpCode = ''; # store php code that create other versions of log
-$sampleT = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logt.php'); # sample logt
+$sampleT = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logtruncate.php'); # sample logt
 $sampleDie = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logdie.php'); # sample logdie
-$sampleTDie = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logtdie.php'); # sample logtdie
+$sampleTDie = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logtruncatedie.php'); # sample logtdie
 
 # remove php open tag
 $sampleT = str_replace('<' . '?php', '', $sampleT);
@@ -37,11 +37,11 @@ $sampleTDie = preg_replace('/require_once.*$/m', '', $sampleTDie);
 
 # create log{i}t
 for ($i = 1; $i <= $nlog; $i++) {
-    $phpCode .= str_replace('logt', 'log' . $i . 't', $sampleT);
+    $phpCode .= str_replace('logtruncate', 'log' . $i . 'truncate', $sampleT);
 }
 # create log{i}tdie
 for ($i = 1; $i <= $nlog; $i++) {
-    $phpCode .= str_replace('logt', "log{$i}t", $sampleTDie);
+    $phpCode .= str_replace('logtruncate', "log{$i}truncate", $sampleTDie);
 }
 
 # create log{i}
@@ -72,15 +72,15 @@ for ($i = 1; $i <= lig::$nlog; $i++) {
 eval(' ' . $phpCode . ' ');
 unset($phpCode);
 // build lognpx lognpy
-$sample = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logpx.php');
-$sample .= file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logpy.php');
-$sample .= file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logpydie.php');
+$sample = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logxprint.php');
+$sample .= file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logyprint.php');
+$sample .= file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logyprintdie.php');
 $sample = str_replace('<' . '?php', '', $sample);
 $sample = preg_replace('/require_once.*$/m', '', $sample);
 $phpCode = '';
 for ($i = 1; $i <= lig::$nlog; $i++) {
-    $tmp = str_replace('logpx', 'log' . $i . 'px', $sample);
-    $phpCode .= str_replace('logpy', 'log' . $i . 'py', $tmp);
+    $tmp = str_replace('logxprint', 'log' . $i . 'xprint', $sample);
+    $phpCode .= str_replace('logyprint', 'log' . $i . 'yprint', $tmp);
 }
 eval(' ' . $phpCode . ' ');
 unset($phpCode);
@@ -88,14 +88,14 @@ unset($phpCode);
 # init php code to execute
 $phpCode = '';
 # get sample
-$sampleR = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logr.php');
+$sampleR = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logrequest.php');
 # remove php open tag
 $sampleR = str_replace('<' . '?php', '', $sampleR);
 # remove require_once
 $sampleR = preg_replace('/require_once.*$/m', '', $sampleR);
 # create log{i}r
 for ($i = 1; $i <= $nlog; $i++) {
-    $phpCode .= str_replace('logr', 'log' . $i . 'r', $sampleR);
+    $phpCode .= str_replace('logrequest', 'log' . $i . 'request', $sampleR);
 }
 # execute code
 eval(' ' . $phpCode . ' ');
@@ -105,14 +105,14 @@ unset($phpCode);
 # init php code to execute
 $phpCode = '';
 # get sample
-$sampleC = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logc.php');
+$sampleC = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logcall.php');
 # remove php open tag
 $sampleC = str_replace('<' . '?php', '', $sampleC);
 # remove require_once
 $sampleC = preg_replace('/require_once.*$/m', '', $sampleC);
 # create log{i}c
 for ($i = 1; $i <= $nlog; $i++) {
-    $phpCode .= str_replace('logc', 'log' . $i . 'c', $sampleC);
+    $phpCode .= str_replace('logcall', 'log' . $i . 'call', $sampleC);
 }
 # execute code
 eval(' ' . $phpCode . ' ');

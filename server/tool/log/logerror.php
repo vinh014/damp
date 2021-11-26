@@ -15,7 +15,7 @@
 /**
  * enable error reporting
  */
-class loge
+class logerror
 {
     public function __construct()
     {

@@ -11,12 +11,9 @@
  *
  * @copyright Copyright (c) 2011-2015 Nguyen Van Vinh (vinhnv@live.com)
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logp.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logyprint.php';
 
-/**
- * same as logp but after showing then die
- */
-class logpdie extends logp
+class logyprintdie extends logyprint
 {
     public function __construct()
     {

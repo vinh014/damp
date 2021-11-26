@@ -16,7 +16,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'lig.php';
 /**
  * same as log, but truncate before logging
  */
-class logt extends lig
+class logtruncate extends lig
 {
     /**
      * can not use http://php.net/manual/en/function.call-user-func-array.php

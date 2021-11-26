@@ -18,7 +18,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'lig.php';
  * measure duration time of executing of part of application
  * new logpx, new logpy write to duration directory
  */
-class logpx
+class logxprint
 {
     /** @var float|null time in milliseconds */
     protected static $_data = array();

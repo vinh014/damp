@@ -11,18 +11,23 @@
  *
  * @copyright Copyright (c) 2011-2015 Nguyen Van Vinh (vinhnv@live.com)
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logp.php';
 
 /**
- * not write log data to file but showing
+ * set a break point when one of conditions is true
  */
-class loga extends logp
+class logbreak
 {
     public function __construct()
     {
-        Stack::pushLog(__FILE__, __CLASS__, __FUNCTION__);
-        $e = new Exception();
-        eval('parent::__construct($e->getTraceAsString());');
+        $conditions = func_get_args();
+        $break = false;
+        $count = count($conditions);
+        for($i = 0; $i < $count; $i++) {
+            if($conditions[$i]) {
+                $break = true;
+                break;
+            }
+        }
+        $break && function_exists('xdebug_break') && xdebug_break();
     }
 }
- 

@@ -15,11 +15,11 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'lig.php';
 
 /**
  * refer logr
- * each calling each file
- * each request each directory
+ * each calling output in a file
+ * each request output in a directory
  * base on SERVER REQUEST URI and uniqid
  */
-class logc extends lig
+class logcall extends lig
 {
     public function __construct()
     {
